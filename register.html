@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styla.css">
+    <title>Login</title>
+</head>
+<body>
+    <form action="">
+        <div class="container">
+            <div class="formContent">
+                <h1>Create Account</h1>
+                <div class="parentInp">
+                    <div class="nameInput">
+                        <label for="">Name</label>
+                        <input type="text" name="" id="nameInp">
+                    </div>
+                    <div class="emailInput">
+                        <label for="">Email</label>
+                        <input type="email" name="" id="emailInp">
+                    </div>
+                </div>
+                <div class="parentInp">
+                    <div class="passInput">
+                        <label for="">Password</label>
+                        <input type="password" minlength="8" name="" id="passInp">
+                    </div>
+                    <div class="cPassInput">
+                        <label for="">Confirm Password</label>
+                        <input type="password" name="" minlength="8" id="cPassInp">
+                    </div>
+                </div>
+                <div class="parentInp">
+                    <div class="telInput">
+                        <label for="">Phone</label>
+                        <input type="tel" name="" id="telInp">
+                    </div>
+                    <div class="dateInput">
+                        <label for="">Date</label>
+                        <input type="date" name="" id="dateInp">
+                    </div>
+                </div>
+                <button id="regBtn">Create Account</button>
+                <p>You Have Account <a href="login.html">Login</a>.</p>
+            </div>
+        </div>
+    </form>
+
+
+
+
+    <script>
+        let nameInp = window.nameInp ;
+        let emailInp = window.emailInp ;
+        let passInp = window.passInp ;
+        let cPassInp = window.cPassInp ;
+        let telInp = window.telInp ;
+        let dateInp = window.dateInp ;
+        let regBtn = window.regBtn ;
+
+        regBtn.onclick = (e) => {
+            e.preventDefault()
+            if (nameInp.value == "" || emailInp.value == "" || passInp.value == "" || cPassInp.value == "" || telInp.value == "" || dateInp.value == "") {
+                alert("Please Fill All Date");  
+            }else if (passInp.value == cPassInp.value) {
+                localStorage.setItem("Name" , nameInp.value)
+                localStorage.setItem("Email" , emailInp.value)
+                localStorage.setItem("password" , passInp.value)
+                localStorage.setItem("Confirm Password" , cPassInp.value)
+                localStorage.setItem("Phone" , telInp.value) 
+                localStorage.setItem("Date" , dateInp.value)
+
+                window.location = "login.html"
+            }else{
+                alert("Please Confirm Password Like a Password");
+            }
+        }
+    </script>
+</body>
+</html>

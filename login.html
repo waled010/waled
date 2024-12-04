@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styla.css">
+    <title>Login</title>
+</head>
+<body>
+    <form action="">
+        <div class="container">
+            <div class="formContent">
+                <h1>Login</h1>
+                <div class="inp">
+                    <label for="">Email</label>
+                    <input type="email" name="" id="emailInp">
+                </div>
+                <div class="inp">
+                    <label for="">Password</label>
+                    <input type="password" minlength="8" name="" id="passInp">
+                </div>
+                <button id="logBtn">Login</button>
+                <p>Don’t Have Account <a href="register.html">Register Now</a>.</p>
+            </div>
+        </div>
+    </form>
+
+
+    <script>
+        let emailInp = window.emailInp;
+        let passInp = window.passInp;
+
+        let logBtn = window.logBtn
+        logBtn.onclick = (e) => {
+            e.preventDefault()
+            
+            if (emailInp.value == localStorage.getItem("Email") && passInp.value == localStorage.getItem("password")) {
+                window.location = "index.html";
+            }else {
+                alert("Please Enter Right Data");
+            }
+        }
+    </script>
+</body>
+</html>
